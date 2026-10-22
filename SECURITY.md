@@ -1,24 +1,18 @@
-# Security, privacy and provenance policy
+# Security, privacy, attribution and permitted release
 
-This is a **public** collection. Never submit credentials or private materials, even temporarily: Git retains previous versions.
+This is a **public recruiter portfolio**. Do not add real credentials, access tokens, authorization headers, personal addresses, phone numbers, private email, recorded interviews, student documents, client information, unlicensed course data or real auction-room events. `.gitignore` is not an adequate security control on its own.
 
-## Specifically excluded
+## Public material
 
-- Original `.env` files, API tokens, access keys, SSH keys, session cookies, authorization headers, database passwords, credential backups, browser storage and Git metadata from source archives.
-- Names or identifiers of private auction participants, addresses, contact details, private emails, CVs, client records, employer QlikView documents, unpublished coauthor manuscripts and licensed microdata.
-- Raw ZIP backups, raw notebook outputs, unreviewed AI/LLM transcripts, internal logs and private local paths.
-- Third-party application sources without independently established redistribution rights. PaperLens is an open-source **adaptation** with attribution, not an original software platform authored from scratch.
+The repository contains explanatory material and independently created **synthetic technical demonstrations**, each with a limited, labelled scope. The original application source and research datasets are not distributed. Underlying project authors, coauthors, employer data owners and open-source developers retain their respective rights. In particular, [PaperLens upstream](https://github.com/hridaya14/PaperLens) is a third-party MIT-licensed project: this portfolio does not claim sole authorship.
 
-## What is included
+## Before future public uploads
 
-Only independently authored, small **synthetic code demonstrations**, synthetic ticket records, test cases and descriptive case-study notes. The source applications remain separate and unmodified. Simulated samples cannot be treated as evidence of production-scale performance or accuracy.
+1. Work from a clean source tree. Do not upload personal source archives or their Git histories.
+2. Replace all sensitive records with artificial data. Check `.env*`, backups, screenshots, notebook outputs, local paths, HTTP logs and metadata.
+3. Confirm contributor permissions, third-party licensing and publication timing for research.
+4. Run `python scripts/check_public_release.py` and all unit tests. It scans known patterns but is **not a complete security audit**.
+5. Examine the staged Git diff and final public contents. Git retains files in historical commits even after later removal.
+6. Rotate any credential that has ever been exposed: simply deleting it from a newer commit cannot undo access.
 
-## Release procedure
-
-1. Start from a clean folder with fresh Git history, not a private development clone.
-2. Exclude secrets at source, verify configuration/fixtures are fictitious, inspect generated notebooks and file metadata.
-3. Scan the **exact upload directory**; run tests; inspect every file type and all Git changes.
-4. Verify licenses and contributor permissions before releasing actual project source.
-5. If an exposed credential has ever been live, revoke/rotate it with the provider: removing it from a later commit is not enough.
-
-To report a security concern, contact the repository owner using GitHub's standard profile tools; no personal email is published here.
+Please use GitHub's standard repository tools to report a concern. The portfolio does not publish an email address for security reports.

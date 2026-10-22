@@ -1,3 +1,7 @@
-# Pirelli — Financial Reporting & Business Valuation
+# Pirelli · Financial Analysis & Business Valuation
 
-Collaborative finance case study with income statement, balance sheet, cash-flow and profitability ratios, a working-capital review and valuation using discounted abnormal profits and comparable market multiples. Strategic components include Porter's Five Forces and PESTEL. Proprietary financial-database exports and the original workbook have not been published pending licensing review.
+**Question:** How do financial performance, strategic context and alternative valuation frameworks inform the assessment of a listed company?
+
+Group project in Financial Reporting and Business Valuation. The work covered income statement, balance sheet, profitability and working-capital ratios, the discounted abnormal profits approach and trading multiples, alongside Porter and PESTEL analysis.
+
+**Value for Business Analysis / Consulting:** selecting financial KPIs, comparing valuation assumptions and connecting numerical findings to strategy. The original group workbook and licensed financial database exports have **not** been redistributed; the write-up is not a trading recommendation or a current valuation.

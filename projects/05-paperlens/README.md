@@ -1,7 +1,22 @@
-# PaperLens — Research Document AI Workflow (Open-Source Adaptation)
+# PaperLens · Research Document Analysis (Open-Source Adaptation)
 
-**Provenance:** The base PaperLens application is third-party, MIT-licensed open-source software. Attribution: [upstream project](https://github.com/hridaya14/PaperLens) (original project, copyright and license remain with original authors). This entry describes experimentation, configuration and extensions of that project, NOT sole authorship of its full stack.
+**Problem:** Explore how complex research documents can be indexed, searched and converted into structured outlines for review and presentation.
 
-**Observed workflow:** Docker Compose, Python/FastAPI backend, Next.js/TypeScript interface, PostgreSQL, Redis, OpenSearch, document parsing and retrieval, external AI/embedding services. Historical scripts include checks for service readiness, complete document indexing, structured 10-branch mind-map generation and long retrieval-augmented answers. The existence of scripts is not proof the checks passed in a reproducible environment.
+This project involved configuring, testing and modifying an **existing open-source PaperLens application**, rather than independently authoring its entire system. The original code is attributed to [Hridaya Sharma's PaperLens repository](https://github.com/hridaya14/PaperLens), distributed under the original project's MIT license.
 
-**Why code is intentionally withheld:** supplied archives contain multiple environment files, backups, original Git history and local paths. A later source release requires precise attribution, an upstream diff, clearance of every embedded secret, removal of old history and validated setup instructions. **No source ZIP, `.env`, deployment configuration or document uploads are published here.**
+## Components involved
+
+```mermaid
+flowchart LR
+  A[Document input] --> B[Parsing and API]
+  B --> C[(PostgreSQL)]
+  B --> D[OpenSearch indexing]
+  D --> E[Retrieval + AI processing]
+  E --> F[Web interface and mind-map views]
+```
+
+Docker Compose coordinated the relevant local services, including Python/FastAPI, a web front end, PostgreSQL, Redis and OpenSearch. My work and experiments concerned the integrated workflow, troubleshooting and structured mind-map output for an academic document. The archived acceptance scripts include assertions about service health, indexing, mind-map structure and document-based responses; **their existence alone does not prove a successful final end-to-end run**.
+
+## What is public
+
+Only this technical case study and the upstream attribution. The source archive is excluded because of environment files, backups, embedded repository history and unresolved source-diff/redistribution questions. No private documents, original source ZIP or live credentials are distributed. This is an **open-source adaptation**, not a claim of sole authorship.

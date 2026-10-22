@@ -1,26 +1,22 @@
-# Support Analytics — SQL + Power BI Demonstrator
+# Support Operations Analytics · BI Case Study
 
-This folder is a **fully synthetic demonstration**, **not** a copy of any employer's database or dashboards. It models typical operational questions from a support function: ticket volumes, resolution times, workload by team and monthly trends.
+**Question:** How can a support team understand workload, response times and unresolved cases without misleading KPI definitions?
 
-This dataset is generated for this public demo. `operator_id` represents a synthetic **assigned operator**, not a verified real-world ticket creator or resolver.
+During a Data Analyst internship, I worked with Business Intelligence reporting, QlikView, KPI monitoring and data-quality checks. This public **independent demonstration** applies comparable analytical reasoning to an entirely fictional ticket dataset; it is not a reproduction of employer dashboards or customer records.
 
-## Quick start (PostgreSQL)
+## Approach
 
-1. Create a PostgreSQL database (free, local).
-2. Run `sql/01_schema.sql`.
-3. Use your SQL client's CSV Import tool to load `data/support_tickets_synthetic.csv` into `support_tickets`.
-4. Run `sql/02_kpis.sql`. On a fresh database, the sample contains **60** distinct tickets (48 closed, 12 open). The schema and metrics are designed for PostgreSQL; run them on PostgreSQL to check full dialect compatibility.
-5. Open `data/support_tickets_synthetic.csv` in Power BI Desktop and build the views described in `dashboard_guide.md`.
+1. Define business terms: *tickets opened*, *closed cases*, *observed first view*, *case resolution time* and *assignments*.
+2. Design a small relational-friendly ticket schema and inspect missing/invalid timestamps.
+3. Aggregate outcomes by team and time, without treating unresolved cases as zero-hour resolutions.
+4. Present summary results and a Power BI Desktop build guide (no completed `.pbix` published).
 
-## Data dictionary
+## Inspectable evidence
 
-`ticket_id` unique ticket; `customer_id` synthetic customer; `team` Support/BTGuard; `operator_id` pseudonymous synthetic operator; `opened_at`, `first_viewed_at`, `closed_at` timestamps; `category` issue label; `status` open/closed.
+- [Synthetic CSV — 60 records](data/support_tickets_synthetic.csv) · [Schema](sql/01_schema.sql) · [PostgreSQL KPI queries](sql/02_kpis.sql)
+- [Python reporting script](report_demo.py) · [Calculated sample results](SAMPLE_RESULTS.md)
+- [Dashboard design notes](dashboard_guide.md) · [Run guide](../../docs/RUN_DEMOS.md)
 
-## Learning goals
+**Methods & tools:** QlikView (internship); Python, SQL/PostgreSQL, CSV, KPI definitions and Power BI design (public demonstrator).
 
-- Explicit KPI definitions; filter consistency; handling missing timestamps.
-- `COUNT(*)` vs distinct tickets; resolution and first-response times.
-- Grouping by team, customer and time with CTEs and window functions.
-- Communicating uncertainty: an open ticket has no observed resolution time.
-
-There are **no employer records, customer data or proprietary formulas** here.
+**Boundary:** No actual Best Tool records, QlikView documents, customers, company charts or proprietary formulae are included. The test data do not establish business impact at an employer.

@@ -1,3 +1,5 @@
-# Constrained Nonlinear Optimization
+# Constrained Optimization · Nonlinear Model
 
-Collaborative course assignment modelling maximization under budget and nonlinear constraints. Feasible-set geometry, Karush–Kuhn–Tucker conditions and second-order analysis. This is a mathematical illustration, **not dietary or medical advice**. A separate verified solver-based demonstration may be added later.
+Collaborative mathematics coursework on maximisation with a budget constraint and other nonlinear restrictions. Methods include feasible sets, Lagrange/Karush–Kuhn–Tucker conditions and second-order reasoning.
+
+**Skills:** mathematical formulation, constraint interpretation and critical assessment of numerical or analytical optima. The motivating diet scenario is an **academic optimization exercise**, not clinical or nutritional advice. Full reproducible source is not yet distributed.

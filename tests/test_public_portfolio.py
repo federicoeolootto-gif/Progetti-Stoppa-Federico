@@ -81,5 +81,30 @@ class PublicExampleTests(unittest.TestCase):
         self.assertTrue(all(np.isfinite(v) and v > 0 for v in values.values()))
 
 
+
+class ReportingAndReleaseTests(unittest.TestCase):
+    def test_report_metrics_are_reproducible(self):
+        report = from_path('projects/01-support-analytics/report_demo.py', 'report_demo')
+        metrics = report.calculate_report()
+        self.assertEqual(metrics['tickets'], 60)
+        self.assertEqual(metrics['closed_tickets'], 48)
+        self.assertEqual(metrics['open_tickets'], 12)
+        self.assertEqual(metrics['closure_share_percent'], 80.0)
+        self.assertEqual(metrics['observed_resolutions'], 48)
+
+    def test_reporting_detects_bad_timestamps(self):
+        import tempfile
+        report = from_path('projects/01-support-analytics/report_demo.py', 'report_demo_second')
+        csv_text = ('ticket_id,customer_id,team,operator_id,opened_at,first_viewed_at,closed_at,category,status\n'
+                    '1,C-1,Support,O-1,2026-01-02 00:00:00,2026-01-01 00:00:00,,Question,Open\n')
+        with tempfile.TemporaryDirectory() as dirname:
+            path = Path(dirname) / 'test.csv'
+            path.write_text(csv_text, encoding='utf-8')
+            with self.assertRaises(ValueError): report.calculate_report(path)
+
+    def test_public_release_patterns(self):
+        check = from_path('scripts/check_public_release.py', 'release_audit')
+        self.assertEqual(check.audit(), [])
+
 if __name__ == '__main__':
     unittest.main()

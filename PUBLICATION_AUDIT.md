@@ -1,32 +1,39 @@
-# Public Release Audit — 22 October 2026
+# Public Portfolio Audit — 22 October 2026 (recruiter edition v3)
 
-## Scope
+## What was reviewed
 
-The **exact content of this package** was reviewed for obvious secret patterns, personal identifiers, repository metadata, licensed exports, unreleased datasets and misleading claims. Source material included the originally supplied Nova and PaperLens archives, notebook source/outputs, selected reports and the previous public demonstration package. Original archives are **not included**.
+This release builds on the previously screened public-only portfolio. The main README and 13 project descriptions were rewritten for recruiter readability; an independently implemented, synthetic Support Operations report, a reproduction guide, link/secret-pattern preflight checker, unit tests and a minimal GitHub Actions workflow were added. Original project archives **are not part of this release**.
 
-## Material excluded by design
+## Source and provenance boundaries
 
-| Source area | Reason for exclusion |
-|---|---|
-| PaperLens source ZIP | Environment/backup files, possible credential assignments, local paths, embedded upstream and Git history. Original open-source authorship is credited; source diff not validated. |
-| Nova application ZIP | Full application and included rollback backup remain unreviewed for redistribution, safe operational use and third-party bundling; only new offline demonstration included. |
-| FantaGiungla/Airtable | No live tokens, invites, participants, private auction events or vendor scraping code. Synthetic event processor only. |
-| Climate ML | Group research dataset, notebook outputs and absolute local paths excluded. Synthetic ML is a separate tutorial, not the study's training script. |
-| Employer QlikView | No original dashboards, QVW files or private customer data. Only fabricated records and unrelated SQL demonstration. |
-| Research assistant data task | Original instructions, distributed dataset and hiring correspondence excluded; standalone fictional spatial technique demo. |
-| Pirelli, Bonn, thesis and coursework | Full raw notebooks, licensed financial data, IPUMS microdata, coauthor material and unpublished thesis research excluded; descriptive notes only. |
+| Project | Content available publicly | Withheld / qualifier |
+|---|---|---|
+| Support Analytics | Fictional support-ticket records, SQL schema and queries, Python KPI report, Power BI design notes | Best Tool data, confidential `.qvw` files, private client data and actual employer KPI results |
+| Climate ML | Original group work is described; unrelated synthetic Python ML illustration | Original survey data, data cleaning notebooks, original research estimates and unreviewed coauthor outputs |
+| FantaGiungla | New artificial auction-event-processing code + tests | Original code, Airtable access, private room data, participants, tokens, real ML model |
+| Nova | Independent offline provider fallback example + tests | Electron source, API configuration and real transcripts |
+| PaperLens | Technical description plus upstream source attribution | Source archive, `.env` files, Git history, unconfirmed upstream diff |
+| Other academic work | Descriptive methodology notes and a separate synthetic spatial algorithm | Licensable or research-restricted data, unverified code, coauthor materials |
 
-## Claims and functionality
+No public demo is represented as the identical production code from the original project. Neither synthetic ML errors nor synthetic ticket statistics measure real research or business impact.
 
-- `FantaGiungla`: model development underway; no accuracy claim.
-- `Nova`: original system integration with external APIs; public fallback example is offline and mocked.
-- `PaperLens`: upstream adaptation, not entirely original application or a verified production release.
-- `Power BI`: tutorial/instructions only; no finished `.pbix` is claimed.
-- `Synthetic SQL`: intended for PostgreSQL syntax; actual PostgreSQL execution requires a PostgreSQL installation. CSV/data tests run without PostgreSQL.
-- `Climate ML`: demo uses fictional data; cannot reproduce the source project's estimated effects.
+## Code and documentation verification
 
-## Verification procedure
+- 12 Python unittest cases passed in the available environment, including reporting invariants and a source-pattern/link check.
+- 2 Node.js tests passed for offline mocked-provider fallback.
+- Python support-ticket report executed: 60 fabricated cases; 48 closed; 12 open; 54 observed first-view timestamps.
+- Markdown relative links and common secret/private-identifier patterns checked using `scripts/check_public_release.py`.
+- PostgreSQL SQL and GitHub Actions CI workflow have **not** been executed end-to-end within GitHub / a running PostgreSQL installation. CI will run upon publication on GitHub if actions are enabled and permissions permit it.
+- Security scans are heuristic and cannot guarantee absence of every undiscovered secret or establish licenses. Review future files anew.
 
-Run `python -m unittest discover -s tests -v` and `node --test projects/04-nova/mock_provider.test.cjs`. In the audit environment: 9 Python unit tests and 2 Node.js tests passed (public examples). Separately, 63 offline Node.js tests in the original Nova v13.7 archive passed; these were not full Windows, external API or production deployment validation. PostgreSQL SQL scripts were not executed against a live PostgreSQL server. Neither makes a network request.
+## Security and distribution
 
-This is **defense-in-depth**, not a formal proof of absence of secrets: any subsequent repository commit or revised artifact must be scanned anew. Never publish raw private ZIP archives.
+- No raw `.zip`, `.env`, `.git`, `.qvw`, PDF, Excel, notebook caches, vendor page captures, user correspondence or live credentials are included.
+- No actual employer records or original restricted research datasets are redistributed.
+- PaperLens was developed from a separate [MIT-licensed upstream](https://github.com/hridaya14/PaperLens); authorship is attributed and no source copy is shipped.
+- Files intended for upload are text-only sample code, documentation, tests, a synthetic CSV and GitHub Actions workflow.
+- Review the GitHub commit history separately before asserting full historical safety; this audit concerns this **specific new release's files**.
+
+## Reproduce and inspect
+
+Start at [README.md](README.md), follow [run guide](docs/RUN_DEMOS.md) and inspect [evidence map](docs/PROJECT_EVIDENCE.md). For personal data concerns see [SECURITY.md](SECURITY.md).

@@ -1,12 +1,13 @@
-# Geospatial Aggregation — Synthetic Python Demo
+# Geospatial Aggregation · Python Demonstration
 
-A former research-assistant technical exercise motivated this **independent fictional illustration** of distance-weighted aggregation. Neither the original task instructions nor its rainfall/weather data are reproduced.
+**Problem:** Aggregate nearby geolocated observations without mis-handling missing values, invalid coordinates or distance weights.
 
-`spatial_weights.py` computes great-circle Haversine distances, filters observations within a configurable radius, skips missing values and uses inverse-square-distance weights. It handles exact coordinate matches and raises errors for invalid coordinates/non-finite values.
+Inspired by a previous research-assistant technical exercise, this **independent public example** implements Haversine distance, radius filtering and inverse-distance weighting of fictional observations.
+
+[Source](spatial_weights.py) · [Tests](../../tests/test_public_portfolio.py)
 
 ```bash
-python spatial_weights.py
-python -m unittest discover -s ../../tests -v
+python projects/09-geospatial-weather/spatial_weights.py
 ```
 
-The demo's geographic points and measurements are fictional. An IDW mean of precipitation *depth* is **not** total rainfall volume; volume estimation requires consistent physical units and spatial cell areas. The algorithm does not prove equivalence to the full original data task.
+Important: this is not the original recruitment dataset or assignment. A weighted mean of rainfall **depth** is not an estimate of total rainfall **volume**; that requires consistent physical units and spatial coverage.

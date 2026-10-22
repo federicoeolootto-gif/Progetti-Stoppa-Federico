@@ -1,46 +1,58 @@
-# Applied Analytics · Business Analysis · Consulting
+# Federico Stoppa · Data Analytics, Business Analysis & Consulting
 
-**Public, security-reviewed portfolio** documenting business intelligence, causal inference, machine learning, data integrations and decision-support systems. Entries clearly distinguish a completed group course project, an individual application, an upstream open-source adaptation, and a new **synthetic portfolio demonstration**.
+**Applied Economics (MSc, 110/110 cum laude) · Business Intelligence · Machine Learning · Decision Support**
 
-**Public code is NOT a verbatim dump of the original projects.** Source archives were excluded for privacy, licensing, and provenance reasons. The sample implementations are independently written, publicly reproducible demonstrations of selected techniques, with fictional data. Actual application code can only be released after a full source-by-source rights and security review.
+I work at the intersection of quantitative analysis and practical business problems: organising data, defining useful KPIs, building analytical workflows and turning results into decisions. My background combines a Business Intelligence internship with applied econometrics and personal software projects.
 
-## Featured projects
+This portfolio is designed to make the work **easy to inspect**: each project explains the problem, method, my contribution and the evidence available. Links marked **synthetic demo** are safe, independently written illustrations—not copies of private source code or production results.
 
-| Project | Focus | Public evidence and limitations |
+## Start with these projects
+
+| Project | What it demonstrates | Explore |
 |---|---|---|
-| [Support Operations Analytics](projects/01-support-analytics/README.md) | QlikView, KPI analysis, business intelligence | Internship experience plus **fictional** PostgreSQL dataset and SQL queries; no employer files |
-| [Education & Climate Policy](projects/02-climate-ml/README.md) | Python, causal inference, machine learning | Collaborative coursework; offline [synthetic ML illustration](projects/02-climate-ml/synthetic_ml_demo.py), not original research estimates |
-| [FantaGiungla](projects/03-fantagiungla/README.md) | Airtable, event streams, budget optimization | Individual, still in development; [synthetic event-processing demonstration](projects/03-fantagiungla/public_event_demo.py) |
-| [Nova Desktop AI](projects/04-nova/README.md) | Electron, Node.js, document retrieval and LLM APIs | Individual application; [offline mocked-provider fallback demonstration](projects/04-nova/mock_provider_demo.cjs), not the production client |
-| [PaperLens Extension](projects/05-paperlens/README.md) | Docker, PostgreSQL, Redis, OpenSearch, retrieval | Adaptation of an [existing MIT-licensed project](https://github.com/hridaya14/PaperLens); original code not redistributed |
+| **Support Operations Analytics** · Business Intelligence | KPI definition, ticket analysis, PostgreSQL queries and reporting logic, informed by a QlikView internship | [Case study](projects/01-support-analytics/README.md) · [Example results](projects/01-support-analytics/SAMPLE_RESULTS.md) · [SQL](projects/01-support-analytics/sql/02_kpis.sql) |
+| **Education & Climate Policy** · Machine Learning | Applied research with IV/2SLS, Double Machine Learning, Random Forest and Decision Trees; separate reproducible ML illustration | [Research overview](projects/02-climate-ml/README.md) · [Python demo](projects/02-climate-ml/synthetic_ml_demo.py) |
+| **FantaGiungla** · Decision Support | Event-driven analytics, dynamic budgets, data modelling and development of predictive ML | [Architecture & scope](projects/03-fantagiungla/README.md) · [Event-processing demo](projects/03-fantagiungla/public_event_demo.py) |
+| **Nova** · AI Integration | Electron/Node.js application integrating LLM APIs, local retrieval and speech-to-text; resilient provider orchestration | [Application overview](projects/04-nova/README.md) · [Offline API-fallback demo](projects/04-nova/mock_provider_demo.cjs) |
+| **PaperLens** · Document AI / Infrastructure | Adaptation of an existing open-source research application using Docker, OpenSearch, PostgreSQL and document retrieval | [Technical overview & attribution](projects/05-paperlens/README.md) |
 
-## Additional case studies
+### Selected capabilities
 
-- [Bourbon Roads and Municipal Population](projects/06-historical-roads/README.md): spatial data, fixed effects and event-study econometrics; original research materials withheld pending publication coordination.
-- [Macroeconomic VAR and Impulse Responses](projects/07-var/README.md): academic time-series modelling; no unsupported performance claims.
-- [Pirelli Financial Analysis](projects/08-pirelli/README.md): collaborative accounting and valuation case study; licensed data not redistributed.
-- [Geospatial Aggregation](projects/09-geospatial-weather/README.md): **fictional, runnable** Python distance-weighting micro-demo.
-- [University of Bonn Research](projects/10-bonn/README.md): original academic IV/2SLS project; restricted source microdata excluded.
-- [Mean Field Games](projects/11-mean-field/README.md): undergraduate mathematical modelling and Python simulations.
-- [Nonlinear Optimization](projects/12-optimization/README.md): collaborative KKT coursework; not health guidance.
-- [Other Activities](projects/13-other/README.md): selected hackathons, tutoring and creative activities.
+- **Analytics and BI:** QlikView, Excel, Airtable, Python (pandas, NumPy), KPI design, data cleaning and validation.
+- **Modelling:** econometrics, causal inference, panel methods, IV/2SLS, DoubleML, scikit-learn, R, Stata and optimization.
+- **Software and data systems:** JavaScript, Node.js, Electron, REST/LLM API integrations, Git, Docker Compose, PostgreSQL, Redis and OpenSearch.
 
-## Tooling and methodological exposure
+These tools were used at different depths across coursework, self-directed projects and employment; listing a tool is not a claim of production expertise. **Power BI Desktop and predictive ML for FantaGiungla are in development**, not completed published deliverables.
 
-Python, R, JavaScript, SQL (demonstration), Excel, QlikView, pandas, NumPy, scikit-learn, Statsmodels, DoubleML, Stata, Airtable, Node.js, Electron, REST/LLM APIs, Docker Compose, PostgreSQL, Redis, OpenSearch, Jupyter, Git/GitHub; econometrics, optimization and spatial analysis. Technologies were used at different depths across different projects. No professional proficiency levels are implied.
+## More work
 
-**In progress, not a completed deliverable:** FantaGiungla predictive ML and an independent Power BI Desktop report.
+| Theme | Project |
+|---|---|
+| Economic history & causal inference | [Bourbon Royal Roads and municipal population](projects/06-historical-roads/README.md) |
+| Time-series econometrics | [Macroeconomic VAR and impulse responses](projects/07-var/README.md) |
+| Corporate finance & strategy | [Pirelli financial reporting and valuation](projects/08-pirelli/README.md) |
+| Spatial data workflows | [Geospatial aggregation — runnable Python illustration](projects/09-geospatial-weather/README.md) |
+| International research | [University of Bonn research project](projects/10-bonn/README.md) |
+| Mathematical modelling | [Mean field games](projects/11-mean-field/README.md) · [Constrained optimization](projects/12-optimization/README.md) |
+| Broader experience | [Hackathons, tutoring and communication](projects/13-other/README.md) |
 
-## Run the public demonstrations
+## Try the public demos
 
-Requirements: Python 3.10+; Node.js 18+ for the Nova mock; `pip install -r requirements-demos.txt` for the ML demonstration. PostgreSQL is optional and is only needed to execute the native SQL scripts.
+All demo records are **fictional**; there are **no credentials, live external APIs or employer data**. Use Python 3.10+ and Node.js 18+.
 
 ```bash
+python -m pip install -r requirements-demos.txt
 python -m unittest discover -s tests -v
+node --test projects/04-nova/mock_provider.test.cjs
+
+# Optional: inspect standalone demonstrations
+python projects/01-support-analytics/report_demo.py
 python projects/02-climate-ml/synthetic_ml_demo.py
 python projects/03-fantagiungla/public_event_demo.py
-python projects/09-geospatial-weather/spatial_weights.py
-node --test projects/04-nova/mock_provider.test.cjs
 ```
 
-The Python tests do not require access to external accounts, live APIs, employer data, or third-party databases. See [Security and Attribution](SECURITY.md) and [Audit Notes](PUBLICATION_AUDIT.md).
+See the [reproduction guide](docs/RUN_DEMOS.md) for platform notes and the optional PostgreSQL queries. The portfolio has test code; successful execution on your own machine depends on installing the listed dependencies.
+
+---
+
+**Scope and attribution.** Some original datasets and application sources are not distributed because of privacy, intellectual-property or research-publication constraints. Examples are labelled as such in the individual case studies. See [publication audit](PUBLICATION_AUDIT.md), [security and provenance](SECURITY.md) and [project evidence index](docs/PROJECT_EVIDENCE.md). For the PaperLens third-party foundation, see its [upstream attribution](projects/05-paperlens/README.md).

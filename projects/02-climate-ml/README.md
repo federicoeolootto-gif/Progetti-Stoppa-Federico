@@ -1,14 +1,21 @@
-# Education, Climate Policy & Machine Learning
+# Education, Climate Attitudes & Machine Learning
 
-**Original work:** University of Padua group coursework examining education and climate-related attitudes by combining European survey information and compulsory-schooling reforms. Supplied materials describe OLS, instrumental-variable 2SLS, Double Machine Learning with Random Forest nuisance models, cross-fitting, and decision-tree cost-complexity pruning. Multiple students contributed; no individual authorship of the entire study is claimed here.
+**Research question:** Can additional education affect climate-related beliefs, policy preferences and behaviours? How do conventional econometric estimates compare with flexible machine-learning-based methods?
 
-**Important qualification:** the presentation reports a test RMSE of 0.187 for a pruned decision tree; original-source reproduction and source-data publication rights have not been independently established. The source notebook also includes outputs and data paths and is NOT uploaded.
+This was **collaborative University of Padua coursework**. The original study combines European survey outcomes with variation from compulsory-schooling legislation. The work included OLS, instrumental-variable 2SLS, Double Machine Learning with Random Forest nuisance models and cost-complexity pruning of decision trees.
 
-## Public code
+## Analytical workflow
 
-[`synthetic_ml_demo.py`](synthetic_ml_demo.py) is an **independently written illustration** of a reproducible train/test split, baseline, decision-tree tuning on training folds and out-of-sample comparison with Random Forest. Its generated data, coefficients and RMSE are fictional and **not** the original education/climate estimates. This demo does **not** establish a causal relationship or implement the original IV/DML model.
+1. Merge, clean and check multi-country data, including reform-exposure variables.
+2. Contrast associational OLS estimates with IV-based estimates under stated identification assumptions.
+3. Investigate covariate balance, model uncertainty and robustness.
+4. Explore DML and evaluate predictive models on held-out data.
 
-```bash
-pip install -r ../../requirements-demos.txt
-python synthetic_ml_demo.py
-```
+## What you can inspect
+
+- [Synthetic Python ML example](synthetic_ml_demo.py): reproducible train/test split, mean baseline, cross-validated decision tree and Random Forest.
+- [Test suite](../../tests/test_public_portfolio.py) · [Reproduction instructions](../../docs/RUN_DEMOS.md).
+
+**Important distinction:** the public script uses computer-generated data. It does **not** reproduce 2SLS, DML or estimates from the university analysis. An original presentation reported a decision-tree test RMSE of 0.187, but that figure is **not** independently reproduced here and should not be compared to the synthetic demo's metrics.
+
+**Tools & methods in the university work:** Python, pandas, Statsmodels, scikit-learn, DoubleML; causal inference and model validation. Coauthor and data redistribution permissions require further review before original notebooks can be released.
